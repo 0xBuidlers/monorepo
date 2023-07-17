@@ -6,8 +6,7 @@ import { UNIT } from '../utils/constants'
 import { getEventArg } from '../utils/contracts'
 
 async function main() {
-  const [, , , , , , , , , , , , contributor1, contributor2] =
-    await ethers.getSigners()
+  const [, contributor1, contributor2] = await ethers.getSigners()
   const state = JSON.parse(fs.readFileSync('state.json').toString())
   const fundingRound = await ethers.getContractAt(
     'FundingRound',
@@ -18,7 +17,7 @@ async function main() {
   const maciAddress = await fundingRound.maci()
   const maci = await ethers.getContractAt('MACI', maciAddress)
 
-  const contributionAmount = UNIT.mul(16).div(10)
+  const contributionAmount = UNIT.mul(500).div(10)
   state.contributors = {}
 
   for (const contributor of [contributor1, contributor2]) {

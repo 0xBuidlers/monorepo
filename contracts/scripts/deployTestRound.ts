@@ -63,8 +63,8 @@ async function main() {
   )
   const maciParameters = await MaciParameters.read(maciFactory)
   maciParameters.update({
-    signUpDuration: 60 * 5, // 5 minutes
-    votingDuration: 60 * 5,
+    signUpDuration: 60 * 60, // 5 minutes
+    votingDuration: 60 * 60,
   })
   const setMaciParametersTx = await factory.setMaciParameters(
     ...maciParameters.values()
@@ -102,7 +102,7 @@ async function main() {
     name: 'Commons Simulator',
     description:
       'Funding open-source projects & other public goods is the killer app of blockchain tech. Giveth & BlockScience are joining forces to build the Commons Stack: a modular library of well engineered components that can be used to create economic models for projects that are creating value, yet have trouble finding sustainable business models.',
-    imageHash: 'QmbMP2fMiy6ek5uQZaxG3bzT9gSqMWxpdCUcQg1iSeEFMU',
+    imageHash: 'QmS65qSfqm7iJv6rnVU3geBBKTNBFisYLkdMtYEpFKmd6M',
     tagline: 'Modeling Sustainable Funding for Public Good',
     category: 'Data',
     problemSpace: 'metadata.problemSpace',
@@ -114,15 +114,15 @@ async function main() {
     websiteUrl: 'https://website.com/',
     twitterUrl: 'https://twitter.com/',
     discordUrl: 'https://discord.com/',
-    bannerImageHash: 'QmaDy75RkRVtZcbYeqMDLcCK8dDvahfik68zP7FbpxvD2F',
-    thumbnailImageHash: 'QmaDy75RkRVtZcbYeqMDLcCK8dDvahfik68zP7FbpxvD2F',
+    bannerImageHash: 'QmQnbruckxYfvu9B11FHHaam77NtamNdt6u4zT6PmhMPA3',
+    thumbnailImageHash: 'QmQnbruckxYfvu9B11FHHaam77NtamNdt6u4zT6PmhMPA3',
   }
 
   const metadataRecipient2 = {
     name: 'Synthereum',
     description:
       'The aim of our synthetic assets is to help creating fiat-based wallet and applications on any local currencies, and help to create stock, commodities portfolio in order to bring more traditional users within the DeFi ecosystem.',
-    imageHash: 'QmbMP2fMiy6ek5uQZaxG3bzT9gSqMWxpdCUcQg1iSeEFMU',
+    imageHash: 'QmespoWEVoF7shhV11N85GCMFSMjb3qGb6uQFDVMRR59Tn',
     tagline:
       'Synthetic assets with liquidity pools to bridge traditional and digital finance.',
     category: 'Content',
@@ -135,8 +135,8 @@ async function main() {
     websiteUrl: 'https://website.com/',
     twitterUrl: 'https://twitter.com/',
     discordUrl: 'https://discord.com/',
-    bannerImageHash: 'QmaDy75RkRVtZcbYeqMDLcCK8dDvahfik68zP7FbpxvD2F',
-    thumbnailImageHash: 'QmaDy75RkRVtZcbYeqMDLcCK8dDvahfik68zP7FbpxvD2F',
+    bannerImageHash: 'QmeAcsFZfRd719RHMivPUitJpXzH54k8d3CXpmvmLZnF7A',
+    thumbnailImageHash: 'QmeAcsFZfRd719RHMivPUitJpXzH54k8d3CXpmvmLZnF7A',
   }
 
   const metadataRecipient3 = {

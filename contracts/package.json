@@ -10,6 +10,8 @@
     "deploy:arbitrum": "hardhat run --network arbitrum scripts/deploy.ts",
     "deployTestRound:local": "hardhat run --network localhost scripts/deployTestRound.ts",
     "contribute:local": "hardhat run --network localhost scripts/contribute.ts",
+    "round:new": "hardhat run --network localhost scripts/newRound.ts",
+    "contributors:load": "hardhat run --network localhost scripts/loadContributors.ts",
     "vote:local": "hardhat run --network localhost scripts/vote.ts",
     "tally:local": "hardhat run --network localhost scripts/tally.ts",
     "finalize:local": "hardhat run --network localhost scripts/finalize.ts",
