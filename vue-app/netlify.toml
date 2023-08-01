@@ -1,5 +1,4 @@
 [build]
-  base = "vue-app/"
-  command = "yarn && yarn build"
+  command = "yarn build"
   functions = "dist/lambda"
   publish = "dist"
