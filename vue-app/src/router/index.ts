@@ -37,7 +37,7 @@ const routes: Array<RouteRecordRaw> = [
     name: 'landing',
     component: Landing,
     meta: {
-      title: 'Clr.fund',
+      title: 'Quadratic Funding',
     },
   },
   {

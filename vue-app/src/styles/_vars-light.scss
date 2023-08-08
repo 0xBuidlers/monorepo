@@ -6,16 +6,16 @@
   // workaround for using css variables with sass mixins
   --text-color-rgb: 33, 37, 41;
 
-  --brand-primary: #6f3ff5;
-  --brand-secondary: #00e3a1;
-  --brand-tertiary: #f3d2f9;
+  --brand-primary: #4faee3;
+  --brand-secondary: #fab308;
+  --brand-tertiary: #e3f0fb;
 
   --error-color: #bd6b5e;
   --warning-color: var(--text-color);
   --warning-background: rgb(255, 248, 197);
   --warning-border: rgba(212, 167, 44, 0.4);
   --attention-color: #bd6b5e;
-  --link-color: #00e3a1;
+  --link-color: #4faee3;
   --loader-color: #d0d7de;
 
   --border-color: #d0d7de;
@@ -26,27 +26,27 @@
   --shadow-dark-rgb: 249, 243, 243;
 
   --bg-primary-color: #fff;
-  --bg-secondary-color: #fff;
+  --bg-secondary-color: #e3f0fb;
   --bg-light-color: #fff;
 
   // alternative mapping for secondary and light background
-  --bg-secondary-highlight: #f5f2ff;
-  --bg-secondary-accent: #9789c4;
-  --bg-light-highlight: #f5f2ff;
-  --bg-light-accent: #6f3ff5;
+  --bg-secondary-highlight: #e3f0fb;
+  --bg-secondary-accent: #155e8f;
+  --bg-light-highlight: #e3f0fb;
+  --bg-light-accent: #155e8f;
 
   --bg-transparent: #fff;
   --bg-gradient: white;
   --bg-gradient-hero: transparent;
-  --bg-address-box: #f3d2f9;
+  --bg-address-box: #8bc9ee;
   --bg-how-it-works: var(--bg-primary-color);
   --bg-inactive: #9789c4;
-  --bg-circle: #d2fff6;
+  --bg-circle: #e3f0fb;
 
   --button-secondary-color: #212529;
-  --button-secondary-bg: #d2fff6;
+  --button-secondary-bg: #e3f0fb;
   --button-secondary-border: none;
-  --button-action: #00e3a1;
+  --button-action: #4faee3;
 
   --explorer-border: var(--border-color);
   --explorer-hover: none;

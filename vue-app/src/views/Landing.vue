@@ -3,40 +3,39 @@
     <round-status-banner v-if="currentRound" />
     <div id="page">
       <div id="hero">
-        <img src="@/assets/moon.png" id="moon" />
+        <!-- <img src="@/assets/moon.png" id="moon" /> -->
         <div class="image-wrapper">
-          <image-responsive title="docking" alt="Image of docking spaceship" />
+          <!-- <image-responsive title="docking" alt="Image of docking spaceship" /> -->
+          <img src="@/assets/background/background_hero.svg" style="z-index: 0" />
         </div>
-        <div>
-          <div class="hero-content">
-            <h1>{{ $t('landing.hero.title') }}</h1>
-            <div id="subtitle" class="subtitle">
-              {{ $t('landing.hero.subtitle') }}
-            </div>
-            <div class="btn-group">
-              <links v-if="leaderboardRoute" class="btn-action" :to="leaderboardRoute">
-                {{ $t('landing.button.leaderboard') }}
-              </links>
-              <links v-else-if="appUrl" class="btn-action" :to="appUrl">
-                {{ $t('landing.button.getStarted') }}
-              </links>
-              <div class="btn-info" @click="scrollToHowItWorks">
-                {{ $t('landing.hero.info') }}
-              </div>
+        <div class="hero-content">
+          <h1>{{ $t('landing.hero.title') }}</h1>
+          <div id="subtitle" class="subtitle">
+            {{ $t('landing.hero.subtitle') }}
+          </div>
+          <div class="btn-group">
+            <links v-if="leaderboardRoute" class="btn-action" :to="leaderboardRoute">
+              {{ $t('landing.button.leaderboard') }}
+            </links>
+            <links v-else-if="appUrl" class="btn-action" :to="appUrl">
+              {{ $t('landing.button.getStarted') }}
+            </links>
+            <div class="btn-info" @click="scrollToHowItWorks">
+              {{ $t('landing.hero.info') }}
             </div>
           </div>
-          <div class="apply-callout" v-if="isRoundJoinPhase && !isRecipientRegistryFull">
-            <div class="column">
-              <h2>{{ $t('landing.callout.title') }}</h2>
-              <p>
-                {{ $t('landing.callout.paragraph') }}
-              </p>
-              <div class="button-group">
-                <links to="/join" class="btn-primary w100">{{ $t('landing.callout.action') }}</links>
-                <div v-if="recipientJoinDeadline">
-                  <time-left unitClass="none" :date="recipientJoinDeadline" />
-                  {{ $t('landing.callout.deadline') }}
-                </div>
+        </div>
+        <div class="apply-callout" v-if="isRoundJoinPhase && !isRecipientRegistryFull">
+          <div class="column">
+            <h2>{{ $t('landing.callout.title') }}</h2>
+            <p>
+              {{ $t('landing.callout.paragraph') }}
+            </p>
+            <div class="button-group">
+              <links to="/join" class="btn-primary w100">{{ $t('landing.callout.action') }}</links>
+              <div v-if="recipientJoinDeadline">
+                <time-left unitClass="none" :date="recipientJoinDeadline" />
+                {{ $t('landing.callout.deadline') }}
               </div>
             </div>
           </div>
@@ -44,21 +43,27 @@
       </div>
       <div id="section-how-it-works">
         <div class="wormhole-wrapper desktop-l">
-          <image-responsive
+          <!-- <image-responsive
             title="wormhole"
             class="wormhole"
             alt="Image of spaceships funneling through a wormhole and getting bigger"
-          />
+          /> -->
+
+          <img :alt="build" src="@/assets/build.svg" />
         </div>
         <div id="how-it-works-content">
           <h2>{{ $t('landing.how.title') }}</h2>
           <p>
             {{ $t('landing.how.paragraph') }}
           </p>
-          <image-responsive
+
+          <!-- <image-responsive
             title="wormhole"
             alt="Image of spaceships funneling through a wormhole and getting bigger"
-          />
+          /> -->
+
+          <img :alt="build" src="@/assets/build.svg" />
+
           <h2>{{ $t('landing.how.subtitle') }}</h2>
           <ol>
             <li>
@@ -149,10 +154,10 @@
           <links to="https://github.com/clrfund/monorepo/">{{ $t('landing.footer.link-6') }}</links>
         </div>
         <div class="link-li">
-          <links to="https://discord.gg/ZnsYPV6dCv">{{ $t('landing.footer.link-7') }}</links>
+          <links to="https://bit.ly/buidlers-discord">{{ $t('landing.footer.link-7') }}</links>
         </div>
         <div class="link-li">
-          <links to="https://twitter.com/clrfund">Twitter</links>
+          <links to="https://twitter.com/EtherArgentina">Twitter</links>
         </div>
         <div class="link-li">
           <links to="https://blog.clr.fund/">{{ $t('landing.footer.link-blog') }} </links>
@@ -331,44 +336,24 @@ ol li::before {
   padding: 0;
   min-height: 639px; /* This is the height when adding in the callout */
   display: flex;
+  justify-content: center;
   flex-flow: wrap;
   @media (max-width: $breakpoint-m) {
-    flex-flow: column;
+    min-height: 400px; /* This is the height when adding in the callout */
   }
   .image-wrapper img {
     position: absolute;
-    mix-blend-mode: exclusion;
-    width: 70%;
-    max-width: 880px;
-    height: auto;
-    transform: rotate(15deg);
-    /* top: -20px; */
+    width: 100%;
     right: 0;
-    @media (max-width: $breakpoint-m) {
-      width: auto;
-      height: 100%;
-      right: -100px;
-    }
+    bottom: 0;
   }
   .hero-content {
-    position: relative;
-    max-width: 40%;
-    min-height: 400px;
+    text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    @media (max-width: $breakpoint-m) {
-      max-width: 880px;
-      margin: -2rem;
-      padding: 2rem;
-      @include gradientBackground(
-        182.34deg,
-        rgba(var(--shadow-dark-rgb), 0.4),
-        81%,
-        rgba(var(--shadow-light-rgb), 0),
-        89.75%
-      );
-    }
+    align-items: center;
+    margin-top: 2rem;
+    z-index: 1;
   }
   #moon {
     position: absolute;
@@ -378,10 +363,10 @@ ol li::before {
   }
   .btn-group {
     display: flex;
+    flex-direction: column;
     gap: 1rem;
-    @media (max-width: $breakpoint-l) {
-      flex-direction: column;
-    }
+    /* @media (max-width: $breakpoint-l) {
+    } */
   }
   .apply-callout {
     background: var(--bg-transparent);
@@ -476,7 +461,6 @@ ol li::before {
 }
 
 #section-how-it-works {
-  background: var(--bg-how-it-works);
   display: grid;
   grid-template-columns: 3fr 2fr;
   grid-template-rows: repeat(2, auto);
@@ -489,12 +473,12 @@ ol li::before {
     position: relative;
     display: flex;
     width: 100%;
+    max-width: 800px;
     align-items: center;
-    .wormhole {
+    img {
       width: 100%;
       height: auto;
       aspect-ratio: 16/9;
-      mix-blend-mode: exclusion;
     }
   }
   #how-it-works-content {
@@ -518,7 +502,7 @@ ol li::before {
       & > img {
         display: inline-block;
         align-self: center;
-        width: 100%;
+        width: 50%;
       }
     }
   }

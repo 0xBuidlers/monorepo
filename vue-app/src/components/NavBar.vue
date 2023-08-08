@@ -4,11 +4,12 @@
       <img class="clr-logo" :alt="operator" src="@/assets/logo.svg" />
     </links>
     <div class="btn-row">
-      <div>
+      <!-- <div>
         <img class="navbar-btn" :src="sunImageUrl" @click="toggleTheme()" />
-      </div>
+      </div> -->
       <div v-click-outside="closeHelpDropdown" class="help-dropdown">
-        <img class="navbar-btn" src="@/assets/help.svg" @click="toggleHelpDropdown()" />
+        <img class="navbar-btn" src="@/assets/menu.svg" style="background: white" @click="toggleHelpDropdown()" />
+
         <div v-if="showHelpDropdown" id="myHelpDropdown" class="button-menu">
           <div class="dropdown-item" @click="closeHelpDropdown">
             <links to="/">
@@ -280,8 +281,7 @@ function toggleTheme(): void {
 
   .clr-logo {
     margin: 0;
-    height: 2.25rem;
-    vertical-align: middle;
+    height: 60px;
   }
 
   .margin-right {

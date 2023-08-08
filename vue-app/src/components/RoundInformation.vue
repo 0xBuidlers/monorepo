@@ -2,7 +2,8 @@
   <div class="projects">
     <div class="round-info">
       <div class="image-wrapper">
-        <image-responsive title="docking" height="100%" />
+        <!-- <image-responsive title="docking" height="100%" /> -->
+        <img src="@/assets/logo.svg" />
       </div>
       <template v-if="roundInfo">
         <div class="round">
@@ -446,8 +447,8 @@ const blockExplorer = computed(() => ({
   justify-content: center;
 }
 .image-wrapper img {
-  mix-blend-mode: exclusion;
-  transform: rotate(15deg);
+  /* mix-blend-mode: exclusion; */
+  /* transform: rotate(15deg); */
 }
 .round {
   display: flex;
