@@ -458,7 +458,6 @@ summary:focus {
   }
 }
 .verified {
-  background: $gradient-highlight;
   height: 16px;
   width: 16px;
   border-radius: 50%;
@@ -557,6 +556,7 @@ summary:focus {
   padding: 5px 10px 4px;
   max-width: 30ch;
   text-align: center;
+
   .v-popper__arrow-outer {
     border: 1px solid $button-color;
   }

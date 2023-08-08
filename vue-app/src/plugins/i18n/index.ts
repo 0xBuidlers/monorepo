@@ -7,7 +7,7 @@ const defaultLocale = import.meta.env.VITE_I18N_LOCALE || 'en'
 export const languages = [
   { locale: 'en', emoji: '🇺🇸', description: 'English' },
   { locale: 'es', emoji: '🇪🇸', description: 'Español' },
-  { locale: 'zh-CN', emoji: '🇨🇳', description: '简体中文' },
+  // { locale: 'zh-CN', emoji: '🇨🇳', description: '简体中文' },
   /*
   // comment out as we don't have the translations for these yet
   { locale: 'tw', emoji: '🇹🇼', description: '繁體中文' },

@@ -100,7 +100,7 @@ const isOnCartOrRoundPage = computed(() => {
   bottom: 0;
   width: 100%;
   height: 4rem;
-  background: var(--bg-light-color);
+  background: var(--brand-primary);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
@@ -120,7 +120,8 @@ const isOnCartOrRoundPage = computed(() => {
   margin-top: -0.75rem;
   font-size: 14px;
   text-transform: uppercase;
-  color: var(--text-body);
+  color: var(--bg-primary-color);
+  font-weight: bold;
 }
 
 .cart-indicator {
@@ -143,8 +144,7 @@ const isOnCartOrRoundPage = computed(() => {
 }
 
 .active {
-  background: var(--bg-secondary-color);
-  box-shadow: inset 0px 2px 0px $border-light;
+  box-shadow: inset 0px 4px 0px var(--bg-secondary-accent);
 }
 
 .circle {

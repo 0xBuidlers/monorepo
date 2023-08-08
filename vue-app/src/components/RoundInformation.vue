@@ -440,7 +440,7 @@ const blockExplorer = computed(() => ({
 
 .image-wrapper {
   border-radius: 8px;
-  background: var(--bg-gradient);
+  /* background: var(--bg-gradient); */
   height: 160px;
   width: 100%;
   display: flex;
@@ -464,12 +464,10 @@ const blockExplorer = computed(() => ({
   line-height: 120%;
   margin: 0;
 }
-.verified-container {
-  align-self: flex-end;
-}
+
 .verified {
   img {
-    filter: var(--img-filter, invert(0.3));
+    /* filter: var(--img-filter, invert(0.3)); */
   }
 }
 .contract-address {
