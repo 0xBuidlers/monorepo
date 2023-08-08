@@ -657,8 +657,8 @@
       "leaderboard": "Ver resultados"
     },
     "hero": {
-      "title": "¡Envía tus proyectos favoritos a la Luna!",
-      "subtitle": "Cada proyecto al que contribuyas obtiene una parte de financiamiento adicional.",
+      "title": "¡Votá a tus proyectos favoritos!",
+      "subtitle": "Al votar bienes públicos, los apoyas para que obtengan un financiamiento extra.",
       "info": "Cómo funciona"
     },
     "callout": {
@@ -671,7 +671,7 @@
       "title": "Cada donación se amplifica mediante el matching pool.",
       "paragraph": "Esta recaudación de fondos recompensa a los proyectos con la demanda única más alta, no solo a aquellos con patrocinadores más adinerados.",
       "subtitle": "Cómo funciona",
-      "list-1": "El {operator} y otros donantes envían fondos al contrato inteligente del matching pool.",
+      "list-1": "{operator} y otros donantes envían fondos al contrato inteligente del matching pool.",
       "list-2": "La ronda comienza y puedes donar a tus proyectos favoritos.",
       "list-3": "Una vez que finaliza la ronda, el contrato inteligente distribuye los fondos del matching pool a los proyectos ponderados principalmente por el número de contribuciones,",
       "list-3-strong": "no por el valor de las contribuciones",
