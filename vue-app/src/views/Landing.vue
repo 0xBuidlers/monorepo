@@ -486,7 +486,6 @@ ol li::before {
     display: flex;
     flex-direction: column;
     background: var(--bg-light-color);
-    /* width: 40%; */
     border-radius: 1rem;
     padding: 2rem;
 
