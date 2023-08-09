@@ -242,12 +242,6 @@ p.no-margin {
     z-index: 2;
     overflow-y: scroll;
 
-    .balances-section {
-      img {
-        filter: var(--img-filter, invert(0.7));
-      }
-    }
-
     .balances-card,
     .setup-card,
     .address-card {
@@ -257,7 +251,6 @@ p.no-margin {
       gap: 1rem;
     }
     .address-card {
-      background: var(--bg-gradient);
       color: var(--text-color);
 
       .address {
@@ -295,7 +288,7 @@ p.no-margin {
           height: 2rem;
           width: 2rem;
           box-sizing: border-box;
-          background: var(--bg-secondary-color);
+
           &:hover {
             transform: scale(1.01);
             opacity: 0.8;

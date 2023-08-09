@@ -151,20 +151,26 @@
           <links to="/about/sybil-resistance">{{ $t('landing.footer.link-5') }}</links>
         </div>
         <div class="link-li">
-          <links to="https://github.com/clrfund/monorepo/">{{ $t('landing.footer.link-6') }}</links>
-        </div>
-        <div class="link-li">
           <links to="https://bit.ly/buidlers-discord">{{ $t('landing.footer.link-7') }}</links>
         </div>
         <div class="link-li">
-          <links to="https://twitter.com/EtherArgentina">Twitter</links>
+          <links to="https://twitter.com/EtherArgentina">Ethereum Argentina</links>
         </div>
         <div class="link-li">
+          <links to="https://twitter.com/NeoPowerDigital">Powered by NeoPower</links>
+        </div>
+        <div class="link-li">
+          <links to="https://twitter.com/buidlerstech">Join Buidlers</links>
+        </div>
+        <div class="link-li">
+          <links to="https://github.com/clrfund/monorepo/">{{ $t('landing.footer.link-6') }}</links>
+        </div>
+        <!-- <div class="link-li">
           <links to="https://blog.clr.fund/">{{ $t('landing.footer.link-blog') }} </links>
         </div>
         <div class="link-li">
           <links to="https://forum.clr.fund/">{{ $t('landing.footer.link-8') }}</links>
-        </div>
+        </div> -->
         <div class="link-li">
           <links to="https://ethereum.org/">{{ $t('landing.footer.link-9') }}</links>
         </div>
