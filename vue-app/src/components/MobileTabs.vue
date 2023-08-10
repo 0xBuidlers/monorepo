@@ -104,6 +104,7 @@ const isOnCartOrRoundPage = computed(() => {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
+  z-index: 10000;
 }
 
 .tab-item {
@@ -126,7 +127,8 @@ const isOnCartOrRoundPage = computed(() => {
 
 .cart-indicator {
   border-radius: 2rem;
-  background: $gradient-highlight;
+  /* background: $gradient-highlight; */
+  background: var(--brand-secondary);
   padding: 0.25rem;
   font-size: 10px;
   color: var(--text-color);
