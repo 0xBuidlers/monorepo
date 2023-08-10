@@ -677,6 +677,11 @@ h2 {
     padding: 1rem 0rem;
     margin-bottom: 3rem;
   }
+
+  .messages-and-cart-items,
+  .reallocation-section {
+    background-color: var(--bg-primary-color);
+  }
 }
 
 .balance {

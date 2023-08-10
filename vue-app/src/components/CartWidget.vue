@@ -86,7 +86,8 @@ function toggleCart(): void {
 
 .cart-indicator {
   border-radius: 2rem;
-  background: $gradient-highlight;
+  /* background: $gradient-highlight; */
+  background: var(--brand-secondary);
   padding: 0.25rem;
   font-size: 10px;
   color: var(--text-color);
@@ -152,7 +153,7 @@ function toggleCart(): void {
   gap: 0.5rem;
   padding: 0.75rem 0.5rem;
   color: var(--text-color);
-  background: var(--bg-cart);
+  background: var(--bg-secondary-highlight);
   border: 1px solid rgba($border-light, 0.3);
   border-right: none;
   &:hover {
