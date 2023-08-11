@@ -677,6 +677,11 @@ h2 {
     padding: 1rem 0rem;
     margin-bottom: 3rem;
   }
+
+  .messages-and-cart-items,
+  .reallocation-section {
+    background-color: var(--bg-primary-color);
+  }
 }
 
 .balance {
@@ -730,6 +735,8 @@ h2 {
   padding: 1rem;
   top: 0;
   z-index: 1;
+  background: var(--bg-primary-color);
+
   @media (max-width: $breakpoint-m) {
     justify-content: space-between;
   }
@@ -870,6 +877,8 @@ h2 {
   line-height: 0;
   font-weight: 400;
   height: 60px;
+  background: var(--bg-primary-color);
+
   @media (max-width: $breakpoint-m) {
     position: fixed;
     bottom: 4rem;
