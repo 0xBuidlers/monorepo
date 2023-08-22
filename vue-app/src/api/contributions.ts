@@ -11,7 +11,7 @@ import type { Project } from './projects'
 import sdk from '@/graphql/sdk'
 import { Transaction } from '@/utils/transaction'
 
-export const DEFAULT_CONTRIBUTION_AMOUNT = 5
+export const DEFAULT_CONTRIBUTION_AMOUNT = 0.01
 export const MAX_CONTRIBUTION_AMOUNT = 10000 // See FundingRound.sol
 
 // The batch of maximum size will burn 9100000 gas at 700000 gas per message
