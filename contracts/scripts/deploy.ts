@@ -4,6 +4,7 @@ import { Contract, utils, Wallet } from 'ethers'
 import { UNIT } from '../utils/constants'
 import { deployMaciFactory } from '../utils/deployment'
 import { Keypair, PrivKey } from '@clrfund/maci-utils'
+import { MaciParameters } from '../utils/maci'
 
 // Number.MAX_SAFE_INTEGER - 1
 const challengePeriodSeconds = 9007199254740990
@@ -61,6 +62,16 @@ async function main() {
     fundingRoundFactory.address
   )
   await transferOwnershipTx.wait()
+
+  const maciParameters = await MaciParameters.read(maciFactory)
+  maciParameters.update({
+    signUpDuration: 7 * 86400, // 7 days
+    votingDuration: 0,
+  })
+  const setMaciParametersTx = await fundingRoundFactory.setMaciParameters(
+    ...maciParameters.values()
+  )
+  await setMaciParametersTx.wait()
 
   const userRegistryType = process.env.USER_REGISTRY_TYPE || 'simple'
   let userRegistry: Contract
