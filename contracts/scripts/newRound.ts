@@ -9,23 +9,9 @@ async function main() {
   console.log('deployer.address: ', deployer.address)
 
   const fundingRoundFactoryAddress = process.env.FACTORY_ADDRESS
-  const userRegistryType = process.env.USER_REGISTRY_TYPE
-  const brightIdSponsor = process.env.BRIGHTID_SPONSOR
-  const brightIdVerifier = process.env.BRIGHTID_VERIFIER_ADDR
 
   if (!fundingRoundFactoryAddress) {
     throw new Error('Environment variable FACTORY_ADDRESS is not setup')
-  }
-
-  if (userRegistryType === 'brightid') {
-    if (!brightIdSponsor) {
-      throw new Error('Environment variable BRIGHTID_SPONSOR is not setup')
-    }
-    if (!brightIdVerifier) {
-      throw new Error(
-        'Environment variable BRIGHTID_VERIFIER_ADDR is not setup'
-      )
-    }
   }
 
   const factory = await ethers.getContractAt(
@@ -47,29 +33,6 @@ async function main() {
         'Cannot start a new round as the current round is not finalized'
       )
     }
-  }
-
-  // deploy a new BrightId user registry for each new round
-  // to force users to link with BrightId every round
-  if (userRegistryType === 'brightid') {
-    const BrightIdUserRegistry = await ethers.getContractFactory(
-      'BrightIdUserRegistry',
-      deployer
-    )
-
-    const userRegistry = await BrightIdUserRegistry.deploy(
-      utils.formatBytes32String(process.env.BRIGHTID_CONTEXT || 'clr.fund'),
-      brightIdVerifier,
-      brightIdSponsor
-    )
-    console.log('BrightId user registry address: ', userRegistry.address)
-    await userRegistry.deployTransaction.wait()
-
-    const setUserRegistryTx = await factory.setUserRegistry(
-      userRegistry.address
-    )
-    await setUserRegistryTx.wait()
-    console.log('Set user registry in factory', setUserRegistryTx.hash)
   }
 
   const tx = await factory.deployNewRound()
