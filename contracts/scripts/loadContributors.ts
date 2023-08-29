@@ -1,43 +1,44 @@
 import { ethers } from 'hardhat'
+import fs from 'fs'
 
 async function main() {
   try {
-    // We're hardcoding factory address due to a buidler limitation:
-    // https://github.com/nomiclabs/buidler/issues/651
-    const factoryAddress = '0x5FC8d32690cc91D4c39d9d3abcBD16989F875707'
-    const [, contributor1, contributor2] = await ethers.getSigners()
+    console.log('Iniciando..')
+    let filePath = 'contributors.txt'
+
+    let content: string | null = null
+    try {
+      content = fs.readFileSync(filePath, 'utf8')
+    } catch (err) {
+      console.error('Failed to read file', filePath, err)
+      return
+    }
+
+    const contributorAddresses: string[] = []
+    content.split(/\r?\n/).forEach(async (address) => {
+      contributorAddresses.push(address)
+    })
 
     // Configure factory
+    const factoryAddress = process.env.FACTORY_ADDRESS!
     const factory = await ethers.getContractAt(
       'FundingRoundFactory',
       factoryAddress
     )
 
     // Add contributors
-    const userRegistryType = process.env.USER_REGISTRY_TYPE || 'simple'
-    if (userRegistryType === 'simple') {
-      const userRegistryAddress = await factory.userRegistry()
-      const userRegistry = await ethers.getContractAt(
-        'SimpleUserRegistry',
-        userRegistryAddress
-      )
-
-      const users = [contributor1, contributor2]
-
-      let addUserTx
-      for (const account of users) {
-        try {
-          addUserTx = await userRegistry.addUser(account.getAddress())
-          addUserTx.wait()
-          console.log(
-            `User ${account.getAddress()} added successfully to the registry.`
-          )
-        } catch (err: any) {
-          console.error(
-            `Failed to add user ${account.getAddress()} to the registry:`,
-            err
-          )
-        }
+    const userRegistryAddress = await factory.userRegistry()
+    const userRegistry = await ethers.getContractAt(
+      'SimpleUserRegistry',
+      userRegistryAddress
+    )
+    for (const contributor of contributorAddresses) {
+      try {
+        let addUserTx = await userRegistry.addUser(contributor)
+        addUserTx.wait()
+        console.log(`User ${contributor} added successfully to the registry.`)
+      } catch (err: any) {
+        console.error(`Failed to add user ${contributor} to the registry:`, err)
       }
     }
   } catch (err: any) {
