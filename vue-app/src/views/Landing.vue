@@ -25,21 +25,6 @@
             </div>
           </div>
         </div>
-        <div class="apply-callout" v-if="isRoundJoinPhase && !isRecipientRegistryFull">
-          <div class="column">
-            <h2>{{ $t('landing.callout.title') }}</h2>
-            <p>
-              {{ $t('landing.callout.paragraph') }}
-            </p>
-            <div class="button-group">
-              <links to="/join" class="btn-primary w100">{{ $t('landing.callout.action') }}</links>
-              <div v-if="recipientJoinDeadline">
-                <time-left unitClass="none" :date="recipientJoinDeadline" />
-                {{ $t('landing.callout.deadline') }}
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
       <div id="section-how-it-works">
         <div class="wormhole-wrapper desktop-l">
