@@ -16,25 +16,8 @@ if (!walletConnectProjectId) {
   throw new Error('Please provide wallet connect project id')
 }
 
-export const infuraJwtToken = import.meta.env.VITE_INFURA_JWT_TOKEN
-
-const providerConnectionHeaders = {
-  'content-type': 'application/json',
-  Authorization: 'Bearer ' + infuraJwtToken,
-}
-
-const providerConnection = {
-  url: rpcUrl,
-  headers: providerConnectionHeaders,
-}
-
-const mainnetProviderConnection = {
-  url: import.meta.env.VITE_ETHEREUM_MAINNET_API_URL,
-  headers: providerConnectionHeaders,
-}
-
-export const mainnetProvider = new ethers.providers.JsonRpcProvider(mainnetProviderConnection)
-export const provider = new ethers.providers.JsonRpcProvider(providerConnection)
+export const mainnetProvider = new ethers.providers.StaticJsonRpcProvider(import.meta.env.VITE_ETHEREUM_MAINNET_API_URL)
+export const provider = new ethers.providers.StaticJsonRpcProvider(rpcUrl)
 export const chainId = Number(import.meta.env.VITE_ETHEREUM_API_CHAINID)
 export const chain = CHAIN_INFO[chainId]
 if (!chain) throw new Error('invalid chain id')
